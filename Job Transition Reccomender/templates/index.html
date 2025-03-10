@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Transition Recommender</title>
+    <link rel="stylesheet" type="text/css" href="/static/virtual-select.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <h1>Job Transition Recommender</h1>
+    <form action="/predict" method="post">
+        <label for="jobCategory">Select Job Category:</label><br>
+        <select id="jobCategory" name="jobCategory">
+            <option value="developer">Developer</option>
+            <option value="engineer">Engineer</option>
+            <option value="designer">Designer</option>
+            <option value="analyst">Analyst</option>
+            <option value="tester">Tester</option>
+            <option value="technical">Technical</option>
+            <option value="technician">Technician</option>
+            <option value="technician">Technician</option>
+            <option value="manegerial">Manegerial</option>
+            <option value="marketing">Marketing</option>
+        </select><br><br>
+
+        <label for="careerLevel">Select Career Level:</label><br>
+        <select id="careerLevel" name="careerLevel">
+            <option value="junior">Junior</option>
+            <option value="mid level">Mid Level</option>
+            <option value="senior">Senior</option>
+            <option value="lead">Lead</option>
+        </select><br><br>
+
+            
+        <div>
+            <select id="hardSkills" multiple name="hardSkills" placeholder="Native Select" data-search="true" data-silent-initial-value-set="true">
+                <option value="configuration management"> Configuration Management</option>
+                <option value="sql"> SQL</option>
+                <option value="html"> HTML</option>
+                <option value="aws,amazon web services"> AWS (Amazon Web Services)</option>
+                <option value="agile"> Agile</option>
+                <option value="jira"> Jira</option>
+                <option value="css"> CSS</option>
+                <option value="c"> C</option>
+                <option value="sqlserver,sql server,sqldatatools"> SQL Server/Datatools</option>
+                <option value="javascript"> JavaScript</option>
+                <option value="indesign"> InDesign</option>
+                <option value=".net,dotnet,dotnetcore"> .NET/.NET Core</option>
+                <option value="photoshop"> Photoshop</option>
+                <option value="jenkins"> Jenkins</option>
+                <option value="linux"> Linux</option>
+                <option value="ruby"> Ruby</option>
+                <option value="http"> HTTP</option>
+                <option value="git"> Git</option>
+                <option value="react native"> React Native</option>
+                <option value="csharp,c#"> C#</option>
+                <option value="selenium"> Selenium</option>
+                <option value="provisioning"> Provisioning</option>
+                <option value="iot"> IoT</option>
+                <option value="react"> React</option>
+                <option value="scrum"> Scrum</option>
+                <option value="python"> Python</option>
+                <option value="cucumber,cucumberbdd"> Cucumber/Cucumber BDD</option>
+                <option value="puppet"> Puppet</option>
+                <option value="windows"> Windows</option>
+                <option value="docker"> Docker</option>
+                <option value="windows server"> Windows Server</option>
+                <option value="version control"> Version Control</option>
+                <option value="illustrator"> Illustrator</option>
+                <option value="java"> Java</option>
+                <option value="rails,ruby on rails,rubyonrails"> Rails/Ruby on Rails</option>
+                <option value="excel"> Excel</option>
+                <option value="nginx"> Nginx</option>
+                <option value="less"> Less</option>
+                <option value="vmware*"> VMware*</option>
+                <option value="angular"> Angular</option>
+                <option value="gradle"> Gradle</option>
+                <option value="tdd"> TDD</option>
+                <option value="node.js,nodejs"> Node.js</option>
+                <option value="webpack"> Webpack</option>
+                <option value="stack"> Stack</option>
+                <option value="specflow"> Specflow</option>
+                <option value="unix"> Unix</option>
+                <option value="asp"> ASP</option>
+                <option value="azure,azuredevops"> Azure/Azure DevOps</option>
+                <option value="mongodb,mongo"> MongoDB/Mongo</option>
+                <option value="saas"> SaaS</option>
+                <option value="grunt"> Grunt</option>
+                <option value="gulp"> Gulp</option>
+                <option value="svn"> SVN</option>
+                <option value="bootstrap"> Bootstrap</option>
+                <option value="sass"> Sass</option>
+                <option value="drupal"> Drupal</option>
+                <option value="serverless"> Serverless</option>
+                <option value="symfony"> Symfony</option>
+                <option value="teamcity"> TeamCity</option>
+                <option value="reactjs,react.js"> ReactJS</option>
+                <option value="npm"> NPM</option>
+              </select>
+        </div><br>
+
+        <input type="submit" value="Get Recommended Job">
+        
+        
+        <script type="text/javascript" src="/static/virtual-select.min.js"></script>"
+        <script type="text/javascript">
+            //this script is from https://www.youtube.com/watch?v=PNyyBK6Y3KI preset for making a drop down select box for visual purposes
+            VirtualSelect.init({ ele: '#hardSkills' });
+
+            function updateBinaryRepresentation() {
+                let select = document.getElementById('hardSkills');
+                let options = select.options;
+                let binaryArray = Array.from({ length: options.length }, () => 0);
+
+                for (let i = 0; i < options.length; i++) {
+                    if (options[i].selected) {
+                        binaryArray[i] = 1;
+                    }
+                }
+            }
+            // Initial update when the page loads
+            updateBinaryRepresentation();
+
+            // Attach event listener to the select element after the initial update
+            let selectElement = document.getElementById('hardSkills');
+            selectElement.addEventListener('change', updateBinaryRepresentation);
+        </script>
+    </form><br><br>
+
+    <label id="reccomendedCategory">Here is a different job role in tech centre we reccomend based on your current level and skills.</label><br>
+    <ul>
+        {% for job in predicted_job_categories%}
+        <li>{{ job }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

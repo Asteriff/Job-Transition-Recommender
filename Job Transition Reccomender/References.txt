@@ -1,0 +1,15 @@
+Arora, L. (2023, May 17). How to deploy machine learning models using flask (with code!). Analytics Vidhya. https://www.analyticsvidhya.com/blog/2020/04/how-to-deploy-machine-learning-model-flask/ 
+
+Author links open overlay panelKhalid K. Al-jabery, &amp; chapter, A. this. (2019, November 22). Data Analysis and machine learning tools in MATLAB and python. Computational Learning Approaches to Data Analytics in Biomedical Applications. https://www.sciencedirect.com/science/article/abs/pii/B9780128144824000097
+ 
+CSS Script. (2023, August 23). High performance select box javascript library - virtual select. https://www.cssscript.com/select-box-virtual-scroll/ 
+
+Invention Tricks. (2022, May 9). JQuery multiselect Dropdown with search box | bootstrap 5 supported Multiselect Dropdown. YouTube. https://www.youtube.com/watch?v=PNyyBK6Y3KI 
+
+Kulkarni, A. (2020). Confusion matrix. Confusion Matrix - an overview | ScienceDirect Topics. https://www.sciencedirect.com/topics/engineering/confusion-matrix#:~:text=A%20confusion%20matrix%20represents%20the,by%20model%20as%20other%20class 
+
+OpenAI. (n.d.). Chatgpt. ChatGPT. https://openai.com/chatgpt 
+
+Shafi, A. (2023, February 24). Random Forest classification with Scikit-Learn. DataCamp. https://www.datacamp.com/tutorial/random-forests-classifier-python 
+
+w3schools. (n.d.). Machine learning - confusion matrix. Python Machine Learning - Confusion Matrix. https://www.w3schools.com/python/python_ml_confusion_matrix.asp 
