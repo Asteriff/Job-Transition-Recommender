@@ -1,7 +1,9 @@
 Job Transition Recommender AI
+
 This AI-powered system analyzes your current field, employment level, and skill set to recommend tailored career transition options, helping you find the right next step in your career.
 
 Features
+
 Personalized career transition recommendations based on your experience and skills
 
 AI-driven suggestions for suitable job roles in different industries
@@ -11,6 +13,7 @@ User-friendly interface to input your details and get relevant career advice
 Seamlessly guides you through the process of exploring new career paths
 
 Installation & Setup
+
 Clone this repository:
 
 bash
